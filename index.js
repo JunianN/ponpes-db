@@ -29,7 +29,6 @@ mongoose
   });
 
 app.use(cors());
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({ limits: 10 * 1024 * 1024 }));
@@ -48,4 +47,4 @@ app.use('/users', usersRouter);
 
 app.use(errorHandler);
 
-app.listen(PORT, () => console.info(`Server running on ${BASEURL}`));
+app.listen(PORT, () => console.info(`Server running on ${PORT}`));

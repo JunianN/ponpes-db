@@ -7,11 +7,9 @@ import fileUpload from 'express-fileupload';
 import getenv from './src/helpers/getenv.js';
 import errorHandler from './src/middlewares/errorHandler.js';
 import requestLogger from './src/middlewares/requestLogger.js';
-// import { BASEURL } from './src/helpers/constants.js';
 
-import borrowsRouter from './src/routes/borrowsRoute.js';
 import authRouter from './src/routes/authRoute.js';
-import booksRouter from './src/routes/booksRoute.js';
+import santriRouter from './src/routes/santriRoute.js';
 import usersRouter from './src/routes/usersRoute.js';
 
 const app = express();
@@ -41,8 +39,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authRouter);
-app.use('/books', booksRouter);
-app.use('/borrows', borrowsRouter);
+app.use('/santri', santriRouter);
 app.use('/users', usersRouter);
 
 app.use(errorHandler);

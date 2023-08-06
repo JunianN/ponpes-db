@@ -1,24 +1,22 @@
 import bcrypt from 'bcrypt';
 import generateAccessToken from '../helpers/auth/generateAccessToken.js';
 import { successResponseBuilder } from '../helpers/responseBuilder.js';
-import User from '../models/usersModel.js';
+import User from '../models/adminModel.js';
 
 export const signupAdmin = async (req, res, next) => {
   try {
-    const { email, password, name } = req.body;
+    const { username, password } = req.body;
 
     const encryptedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
-      email: email.toLowerCase(),
+      username: username,
       password: encryptedPassword,
-      name,
       role: 'ADMIN',
     });
 
     const token = generateAccessToken({
       id: user._id,
-      email,
       isAdmin: true,
     });
 
@@ -28,13 +26,13 @@ export const signupAdmin = async (req, res, next) => {
   } catch (err) {
     if (err?.code === 11000) {
       next({
-        message: `Another user with email ${err?.keyValue?.email} is already registered.`,
+        message: `Another user with username ${err?.keyValue?.username} is already registered.`,
         stack: err.stack,
         statusCode: 409,
       });
       return;
     }
-    if (['CastError', 'ValidationError'].includes(err?.name)) {
+    if (['CastError', 'ValidationError'].includes(err?.username)) {
       next({
         message: err.message,
         stack: err.stack,

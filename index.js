@@ -10,7 +10,7 @@ import requestLogger from './src/middlewares/requestLogger.js';
 
 import authRouter from './src/routes/authRoute.js';
 import santriRouter from './src/routes/santriRoute.js';
-import usersRouter from './src/routes/usersRoute.js';
+import adminRouter from './src/routes/adminRoute.js';
 
 const app = express();
 
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authRouter);
 app.use('/santri', santriRouter);
-app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 app.use(errorHandler);
 

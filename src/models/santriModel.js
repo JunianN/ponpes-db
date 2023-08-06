@@ -10,21 +10,29 @@ const santriSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    tahunMasuk: {
+    ttl: {
       type: String,
-      required: true,
-    },
-    TTL: {
-      type: String,
-      required: true,
+      required: false,
     },
     namaWali: {
       type: String,
-      required: true,
+      required: false,
     },
     alamat: {
       type: String,
-      required: true,
+      required: false,
+    },
+    tahunMasuk: {
+      type: String,
+      required: false,
+    },
+    kelas: {
+      type: String,
+      required: false,
+    },
+    juz: {
+      type: Number,
+      required: false,
     },
   },
   { timestamps: true }

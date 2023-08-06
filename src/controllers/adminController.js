@@ -4,7 +4,7 @@ import {
   httpNotFound,
 } from '../helpers/httpExceptionBuilder.js';
 import { successResponseBuilder } from '../helpers/responseBuilder.js';
-import User from '../models/usersModel.js';
+import User from '../models/adminModel.js';
 
 // export const findAll = async (req, res, next) => {
 //   try {

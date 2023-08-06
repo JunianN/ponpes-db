@@ -2,14 +2,9 @@ import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    username: {
       type: String,
       required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
     },
     password: {
       type: String,
@@ -18,12 +13,7 @@ const userSchema = new mongoose.Schema(
     role: {
       type: String,
       required: true,
-      enum: ['USER', 'ADMIN'],
-      default: 'USER',
-    },
-    borrowedBookIds: {
-      type: [mongoose.Types.ObjectId],
-      required: false,
+      default: 'ADMIN',
     },
   },
   { timestamps: true }

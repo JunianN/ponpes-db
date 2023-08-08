@@ -4,15 +4,15 @@ import * as auth from '../middlewares/auth.js';
 
 const router = express.Router();
 
-router.post('/signup', controller.signup);
+router.post('/signup', controller.signupAdmin);
 router.post('/signin', controller.signin);
 // router.post('/signout', auth.authenticate, controller.signout);
 
-router.post(
-  '/signup/admin',
-  auth.authenticate,
-  auth.authorizeAdmin,
-  controller.signupAdmin
-);
+// router.post(
+//   '/signup/admin',
+//   // auth.authenticate,
+//   // auth.authorizeAdmin,
+//   controller.signupAdmin
+// );
 
 export default router;

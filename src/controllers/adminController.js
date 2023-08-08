@@ -17,7 +17,7 @@ import User from '../models/adminModel.js';
 
 export const findById = async (req, res, next) => {
   try {
-    const id = mongoose.Types.ObjectId(req.params.id);
+    const id = new mongoose.Types.ObjectId(req.params.id);
     const user = await User.findById({ _id: id }).exec();
     if (!user) throw httpNotFound();
     res.json(successResponseBuilder({ user: user }));

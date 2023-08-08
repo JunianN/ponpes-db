@@ -88,17 +88,17 @@ export const signup = async (req, res, next) => {
 
 export const signin = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    if (!email || !password) {
+    if (!username || !password) {
       next({
-        message: 'email and password are required',
+        message: 'masukkan username dan password',
         statusCode: 400,
       });
       return;
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username });
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
       next({
@@ -110,7 +110,7 @@ export const signin = async (req, res, next) => {
 
     const token = generateAccessToken({
       id: user._id,
-      email,
+      username,
       isAdmin: user.role === 'ADMIN',
     });
 

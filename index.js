@@ -41,6 +41,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authRouter);
 app.use('/santri', santriRouter);
 app.use('/admin', adminRouter);
+app.use('/sarpras', sarprasRouter);
 
 app.use(errorHandler);
 

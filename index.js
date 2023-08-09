@@ -11,6 +11,9 @@ import requestLogger from './src/middlewares/requestLogger.js';
 import authRouter from './src/routes/authRoute.js';
 import santriRouter from './src/routes/santriRoute.js';
 import adminRouter from './src/routes/adminRoute.js';
+import sarprasRouter from './src/routes/sarprasRoute.js';
+import ustazRouter from './src/routes/ustazRoute.js';
+
 
 const app = express();
 

@@ -1,5 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/sarprasController.js';
+import * as controller from '../controllers/ustazController.js';
 import * as auth from '../middlewares/auth.js';
 
 const router = express.Router();
@@ -12,6 +12,7 @@ router.post('/',
   // auth.authenticate, 
   // auth.authorizeAdmin, 
   controller.create);
+
 router.put(
   '/:id',
 //   auth.authenticate,

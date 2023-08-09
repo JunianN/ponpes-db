@@ -13,14 +13,10 @@ const ustazSchema = new mongoose.Schema(
     ttl: {
       type: String,
       required: false,
+    },
     alamat: {
       type: String,
       required: false,
-    },
-    jabatan: {
-      type: String,
-      required: false,
-    },
     },
   },
   { timestamps: true }

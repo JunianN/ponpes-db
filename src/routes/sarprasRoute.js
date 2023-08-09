@@ -12,7 +12,7 @@ router.post('/',
   // auth.authenticate, 
   // auth.authorizeAdmin, 
   controller.create);
-
+ 
 router.put(
   '/:id',
 //   auth.authenticate,

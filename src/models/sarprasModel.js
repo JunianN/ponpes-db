@@ -17,3 +17,4 @@ const sarprasSchema = new mongoose.Schema(
 const Sarpras = mongoose.model('Sarpras', sarprasSchema);
 
 export default Sarpras;
+ 

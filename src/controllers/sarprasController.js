@@ -14,7 +14,7 @@ export const findAll = async (req, res, next) => {
     next(err);
   }
 };
- 
+
 export const findById = async (req, res, next) => {
   try {
     const id = new mongoose.Types.ObjectId(req.params.id);

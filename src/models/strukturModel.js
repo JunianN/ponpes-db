@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const ustazSchema = new mongoose.Schema(
+const strukturSchema = new mongoose.Schema(
   {
     nama: {
       type: String,
@@ -14,10 +14,14 @@ const ustazSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    jabatan: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: true }
 );
 
-const Ustaz = mongoose.model('Ustaz', ustazSchema);
+const Struktur = mongoose.model('Struktur', strukturSchema);
 
-export default Ustaz;
+export default Struktur;

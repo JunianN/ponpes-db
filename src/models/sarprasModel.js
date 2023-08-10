@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const sarprasSchema = new mongoose.Schema(
   {
-    namaFasilitas: {
+    nama: {
       type: String,
       required: true,
     },

@@ -13,6 +13,7 @@ import santriRouter from './src/routes/santriRoute.js';
 import adminRouter from './src/routes/adminRoute.js';
 import sarprasRouter from './src/routes/sarprasRoute.js';
 import ustazRouter from './src/routes/ustazRoute.js';
+import strukturRouter from './src/routes/strukturRoute.js';
 
 
 const app = express();
@@ -46,6 +47,7 @@ app.use('/santri', santriRouter);
 app.use('/admin', adminRouter);
 app.use('/sarpras', sarprasRouter);
 app.use('/ustaz', ustazRouter);
+app.use('/struktur', strukturRouter);
 
 app.use(errorHandler);
 
